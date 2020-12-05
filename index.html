@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lineof DOM</title>
+
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>hello, world</h1>
+    </div>
+
+    <script src="libs/lineof.min.js"></script>
+    <script src="dest/lineof-dom.min.js"></script>
+
+    <script>
+        const _ = new Lineof();
+        const $ = _.dom;
+        $(function() {
+            console.log("called");
+            $("div").render(`<div>
+                <h1 class="red">hello, world <span>hello</span></h1>
+            </div>`); 
+        });
+        
+    </script>
+</body>
+</html>
